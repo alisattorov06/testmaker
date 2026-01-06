@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Maker JSON Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="top-bar">
+        <button class="sidebar-toggle" id="sidebarToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <h1 class="app-title">Test Maker</h1>
+        <button class="export-btn" id="exportBtn">
+            <span>JSON yuklash</span>
+            <i class="fas fa-download"></i>
+        </button>
+    </header>
+
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Test Sozlamalari</h2>
+            <button class="sidebar-close" id="sidebarClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="sidebar-content">
+            <div class="sidebar-section">
+                <label for="testTitle">Test nomi</label>
+                <input type="text" id="testTitle" placeholder="Enter test title" value="My Test">
+            </div>
+            
+            <div class="sidebar-section">
+                <h3>Test sozlamalari</h3>
+                
+                <div class="toggle-group">
+                    <div class="toggle-item">
+                        <span>Savollarni aralashtirish</span>
+                        <label class="ios-toggle">
+                            <input type="checkbox" id="mixedQuestions" checked>
+                            <span class="ios-toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-item">
+                        <span>Javoblarni aralashtirish</span>
+                        <label class="ios-toggle">
+                            <input type="checkbox" id="mixedAnswers" checked>
+                            <span class="ios-toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-item">
+                        <span>Timer</span>
+                        <label class="ios-toggle">
+                            <input type="checkbox" id="timer">
+                            <span class="ios-toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="toggle-item">
+                        <span>Parol</span>
+                        <label class="ios-toggle">
+                            <input type="checkbox" id="password">
+                            <span class="ios-toggle-slider"></span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="sidebar-note">
+                    <p><i class="fas fa-info-circle"></i> O'zgartirishlar avtomatik saqlanadi</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sidebar-footer">
+            <p>© Sattorov_A</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="toast" id="toast">
+                <div class="toast-content">
+                    <i class="fas fa-check-circle"></i>
+                    <span>JSON export qilindi!</span>
+                </div>
+            </div>
+            
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-spinner">
+                    <div class="spinner"></div>
+                    <p>JSON fayl yaratilmoqda...</p>
+                </div>
+            </div>
+            
+            <div class="questions-container" id="questionsContainer">
+                <div class="no-questions" id="noQuestions">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Hozircha savol yo'q</h3>
+                    <p>Birinchi savolingizni kiritish uchun quyidagi tugmani bosing</p>
+                </div>
+            </div>
+            
+            <div class="add-question-container">
+                <button class="add-question-btn" id="addQuestionBtn">
+                    <i class="fas fa-plus"></i>
+                    Savol qo'shish
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
